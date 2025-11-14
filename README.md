@@ -5,3 +5,8 @@ The turbine can only move in the fore-aft direction; The 3 blade deflections in 
 With these assumptions, the Turbie is reduced to a 2DOF mass-spring-damper system.
 With the above assumption a 2DOF system was create with the given matrix(M,C and K) in the input file.
 aerodynamic forcing on the blades is formulated as per question, where where A is the rotor area and u(t) is the wind speed at time t. The thrust coefficient Ct is determined from the mean wind speed U=u(t) using the look-up table defined in C_T.txt.
+The full dynamical equations for Turbie formulated with the state vector, and the forcing vector. By simulating Turbie's response to wind loads, the derivatives of the blade and tower deflections and their velocities at each time step determined.
+With a second Python script, these functions are called to solve Turbie for each wind speed case.
+y¯′(t) is passed to the scipy.integrate.solve_ivp function (along with initial conditions for y) which output the blade and tower displacements and velocities of Turbie at each time step.
+For each wind speed cases, time-marching variation of wind and the blade and tower displacements are plotted and saved in the  out put folder.
+The means and standard deviations of the blade and tower displacements for each wind speed calculated and saved within a separate text file for each TI category in the out put folder.
