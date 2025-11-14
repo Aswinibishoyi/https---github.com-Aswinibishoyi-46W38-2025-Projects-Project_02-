@@ -8,5 +8,8 @@ aerodynamic forcing on the blades is formulated as per question, where where A i
 The full dynamical equations for Turbie formulated with the state vector, and the forcing vector. By simulating Turbie's response to wind loads, the derivatives of the blade and tower deflections and their velocities at each time step determined.
 With a second Python script, these functions are called to solve Turbie for each wind speed case.
 y¯′(t) is passed to the scipy.integrate.solve_ivp function (along with initial conditions for y) which output the blade and tower displacements and velocities of Turbie at each time step.
-For each wind speed cases, time-marching variation of wind and the blade and tower displacements are plotted and saved in the  out put folder.
-The means and standard deviations of the blade and tower displacements for each wind speed calculated and saved within a separate text file for each TI category in the out put folder.
+For each wind speed cases, time-marching variation of wind and the blade and tower displacements are plotted and saved in the  results folder.
+The means and standard deviations of the blade and tower displacements for each wind speed calculated and saved within a separate text file for each TI category in the results folder.
+Discussion : 
+The mean deflections primarily driven by the average wind speed, not the turbulence intensity. The mean does not change much across different TIs if the average wind speed is kept the same.
+TheStandard deviation is a measure of variation. Higher Turbulence Intensity (TI) at the same average wind speed should lead to larger fluctuations in aerodynamic force and thus larger standard deviations in the blade and tower displacements.
